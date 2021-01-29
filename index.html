@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Pizza Place</title>
+</head>
+<body>
+<div class="container">
+  <div class="jumbotron">
+    <h1>We've Got Pizza Pies Here</h1>
+    <p>add one pizza at a time to your order</p>
+    <ul>
+      <li>use the form below to select size, toppingsi>
+      <li>click "View Total" once all pizzas have been entered</li>
+    </ul>
+  </div>
+  <div class="form-check">
+    <form action="" class="form-check">
+      <h2>Select Size</h2>
+      <div class="size-select">
+        <label for="choose-large"></label>
+        <input type="radio" name="size-select" id="large-radio" selected>
+        <label for="choose-small"></label>
+        <input type="radio" name="size-select" id="small-radio">
+      </div>
+      <div class="toppings form-check">
+        <label for="x-cheese"">extra mozzarella</label>
+        <input type="checkbox" name="toppings" id="x-cheese" value="x-cheese">
+        <label for="pepperoni">pepperoni <span class="translation">(salsiccia)</span></label>
+        <input type="checkbox" name="toppings" id="pepperoni" value="pepperoni">
+        <label for="mushroom">mushroom</label>
+        <input type="checkbox" name="toppings" id="mushroom" value="mushroom">
+        <label for="bacon">bacon</label>
+        <input type="checkbox" name="toppings" id="bacon" value="bacon">
+        <label for="ham">ham <span class="translation">(prosciutto)</span></label>
+        <input type="checkbox" name="toppings" id="ham" value="ham">
+        <label for="arugula">arugual <span class="translation">(the Brits call it "rocket")</span></label>
+        <input type="checkbox" name="toppings" id="arugula" value="arugula">
+        <label for="ricotta">ricotta</label>
+        <input type="checkbox" name="toppings" id="ricotta" value="ricotta">
+        <label for="gorgonzola">gorgonzola</label>
+        <input type="checkbox" name="toppings" id="gorgonzola" value="gorgonzola">
+        <label for="gruyere">gruy&egrave;re</label>
+        <input type="checkbox" name="toppings" id="gruyere" value="gruyere">
+      </div>
+      <div class="buttons">
+        <button type="submit">Add My Pizza</button>
+      </div>
+      <div class="form-check-inline">
+        <label for="pizza-namer">Give my pizza this name:</label>
+        <input type="text" id="pizza-namer" placeholder="Rosetta's supreme">
+      </div>  
+    </form>
+  </div>
+</div>
+</body>
