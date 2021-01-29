@@ -25,8 +25,18 @@ Order.prototype.addPizza = function(newPizza) {
   this.allPizzas.push(newPizza);
 }
 Order.prototype.calcTotal = function() {
-  let firstPizza = this.allPizzas[0];
-  let toppingsCost = firstPizza.smallTopEach * firstPizza.toppings.length;
-  let firstPizzaSubtotal = toppingsCost + firstPizza.smallBasePrice;
-  return firstPizzaSubtotal;
+  let grandTotal = 0;
+  for (const pizza of this.allPizzas) {
+    if (pizza.size === "small") {
+      let toppingsCost = pizza.smallTopEach * pizza.toppings.length;
+      let pizzaSubtotal = toppingsCost + pizza.smallBasePrice;
+      grandTotal += pizzaSubtotal;
+    } else {
+      let toppingsCost = pizza.largeTopEach * pizza.toppings.length;
+      let pizzaSubtotal = toppingsCost + pizza.largeBasePrice;
+      grandTotal += pizzaSubtotal;
+    }
+  }
+  this.allPizzaSubtotal = grandTotal;
+  return grandTotal;
 }
