@@ -13,8 +13,36 @@ _last major revision 29 January, 2021_
 * _Markdown for this README_
 
 ## Description
-_Pizza Place Order Page exists to take your order. Pizza order details can be selected including size and toppings assortment. An order total will also be displayed to the user._
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_Pizza Place Order Page exists to take your order. Pizza order details can be selected by radio buttons for size and checkboxes for toppings. A pizza is added to the order once all details are selected and "Add this pizza" is pressed. An order total will also be displayed upon clicking button "TOTAL"._
+
+## Specs / Tests _in plain English_
+**Describe:** Pizza()
+| Test | `Code` | Expect |
+| :------- | :------- | :------- |
+| It will create an instance of Pizza whose type is 'object'. | `const pizza1 = new Pizza();` | (typeof pizza1).toEqual('object') |
+| It will assign size "large" at a key "size" on instance of Pizza. | `pizza1.size = "large";` | (pizza1.size).toEqual("large") |
+| It will have an array keyed at "toppings" to store selected toppings. | `pizza1.toppings = ["topping", "topping", "topping"]` | (pizza1.toppings).toEqual(Array ["topping", "topping", "topping"] ) |
+| It will have a price value keyed according to size largeBasePrice. | `pizza1.largeBasePrice` // `38` | (pizza1.largeBasePrice).toEqual(38) |
+
+**Describe:** Order()
+| Test | `Code` | Expect |
+| :------- | :------- | :------- |
+| It will create an instance of Order whose type is 'object'. | `const order1 = new Order();` | (typeof order1).toEqual('object') |
+| It will store instances of Pizza constructor at pizza-named keys. | `order1.diablo` // `pizza1` | (order1.diablo).toEqual(pizza1) |
+
+**Describe:** addPizza()
+| Test | `Code` | Expect |
+| :------- | :------- | :------- |
+| It will add an instance of Pizza to be stored on instance of Order object. | `order1.addPizza(pizza1);` | (order1.pizza1).toEqual( {pizza1} ) |
+| It will assign a name to the pizza as it is added to Order object. | `order1.addPizza(pizza1);` | (Object.keys(order1)).toEqual( "diablo" ) |
+
+**Describe:** CalculateTotal()
+| Test | `Code` | Expect |
+| :------- | :------- | :------- |
+| It will return a number | `const thisOrderPrice = CalculateTotal();` | (typeof thisOrderPrice).toEqual("number") |
+| It will return a subTotal price for one pizza by summing cost of all toppings and basePrice | `const subTotalOnePie = CalculateTotal();` | (subTotalOnePie).toEqual(42) |
+| It will return a subTotalForOrder by summing subTotal price of all pizzas | `const allPizzasPreTax = CalculateTotal();` | (allPizzasPreTax).toEqual(74) |
+| It will return a grand total from subTotalForOrder by adding sales tax. | `const grandTotal = CalculateTotal();` | (grandTotal).toEqual(82.78) |
 
 ## Setup Instructions for Installing Locally (clone from GitHub)
 1 Copy this url to your clipboard: https://github.com/sinkstyt/pizza-place.git
@@ -37,18 +65,20 @@ _{This is a detailed description of your application. Give as much detail as nee
 * _Try the link or paste the URL into your browser's address bar_
 > > `https://sinkstyt.github.io/pizza-place/index.html
 
+## Stretch Goals
+* a clean, stylized view of the complete order before calculating an order total (_a la_ cart view. Sorry for the pun.)
+* the ability for the user to remove a pizza from the current order/via the cart view
+* the ability to add one more pie to the order from the order review/cart view page
+
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _No known bugs at this time. Only Google Chrome version Version 88.0.4324.96 (64-bit) was used in testing the project._
 
 ## License
-
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+[GPLv3](https://choosealicense.com/licenses/gpl-3.0/)\
+Tyler Sinks &copy; 2021
 
 ## Contact Information
 
-_To communicate your praise, criticism, and suggestions_
-_reach the site's author at tyler.sinks@gmail.com_
-
-_Copyright 2021_
+_To communicate praise, critique, and suggestion_
+_the site's author can be reached at tyler.sinks@gmail.com_
