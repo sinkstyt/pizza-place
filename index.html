@@ -18,7 +18,7 @@
     </ul>
   </div>
   <div class="form-check">
-    <form action="" class="form-check">
+    <form class="form-check">
       <h2>Select Size</h2>
       <div class="size-select">
         <label for="choose-large"></label>
@@ -37,7 +37,7 @@
         <input type="checkbox" name="toppings" id="bacon" value="bacon">
         <label for="ham">ham <span class="translation">(prosciutto)</span></label>
         <input type="checkbox" name="toppings" id="ham" value="ham">
-        <label for="arugula">arugual <span class="translation">(the Brits call it "rocket")</span></label>
+        <label for="arugula">arugula <span class="translation">(the Brits call it "rocket")</span></label>
         <input type="checkbox" name="toppings" id="arugula" value="arugula">
         <label for="ricotta">ricotta</label>
         <input type="checkbox" name="toppings" id="ricotta" value="ricotta">
@@ -47,13 +47,28 @@
         <input type="checkbox" name="toppings" id="gruyere" value="gruyere">
       </div>
       <div class="buttons">
-        <button type="submit">Add My Pizza</button>
+        <button type="submit" class="btn btn-success" id="pizza-add">Add My Pizza</button>
+        <button type="button" class="btn btn-danger" id="finalizer">View Total</button> 
       </div>
       <div class="form-check-inline">
         <label for="pizza-namer">Give my pizza this name:</label>
         <input type="text" id="pizza-namer" placeholder="Rosetta's supreme">
-      </div>  
+        <small>optional</small>
+      </div>
+      <div class="form-check-inline">
+        <label for="random-name">give this pizza a random name</label>
+        <input type="checkbox" name="rando-calpizzaian" id="random-name">
+        <small>optional</small>
     </form>
+    <div class="show-pizzas">
+      <h2>Cart View <span class="translation">(all pizzas in this order)</span></h2>
+      <h3>Current order total:<span id="grand-total"></span></h3>
+      <ul class="pizza-list">
+
+      </ul>
+      <button type="button" class="btn btn-dark" id="order-change">Make Change</button>
+      <small>after clicking "Make Change" click pizza to remove from order</small>
+    </div>
   </div>
 </div>
 </body>
