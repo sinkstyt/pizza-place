@@ -34,11 +34,19 @@ _Pizza Place Order Page exists to take your order. Pizza order details can be se
 
 ---
 
+### **Describe:** AssignName()
+| Test | `Code` | Expect |
+| :------- | :------- | :------- |
+| It will assign a new key on an instance of Pizza that holds a string (a name) as its value. | `const pizza1 = new Pizza(); pizza1.assignName();` | (pizza1.name).toEqual("baz") |
+| It will assign a new key "name" on an instance of Pizza when a name is supplied as parameter. | `const pizza2 = new Pizza(); pizza2.assignName("Charlie);` | (pizza2.name).toEqual("Charlie") |
+| It will assign a new key "name" on instance of Pizza chosen at random from an array of strings if a name is not passed in as parameter. | `const pizza3 = new Pizza(); pizza3.assignName();` | (pizza3.name).toEqual("caprice") |
+
+---
+
 ### **Describe:** addPizza()
 | Test | `Code` | Expect |
 | :------- | :------- | :------- |
-| It will add an instance of Pizza to be stored on instance of Order object. | `order1.addPizza(pizza1);` | (order1.pizza1).toEqual( {pizza1} ) |
-| It will assign a name to the pizza as it is added to Order object. | `order1.addPizza(pizza1);` | (Object.keys(order1)).toEqual( "diablo" ) |
+| It will add an instance of Pizza to array stored at order instance's key "allPizzas". | `const pizza7 = new Pizza(); const order3 = new Order(); order3.addPizza(pizza7);` | (order3.allPizzas).toEqual(pizza7) |
 
 ---
 
