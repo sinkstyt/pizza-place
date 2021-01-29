@@ -30,7 +30,7 @@ _Pizza Place Order Page exists to take your order. Pizza order details can be se
 | Test | `Code` | Expect |
 | :------- | :------- | :------- |
 | It will create an instance of Order whose type is 'object'. | `const order1 = new Order();` | (typeof order1).toEqual('object') |
-| It will store instances of Pizza constructor at pizza-named keys. | `order1.diablo` // `pizza1` | (order1.diablo).toEqual(pizza1) |
+| It will initialize all new instances of Order with an empty array called "allPizzas". | `let order17 = new Order();` | (order17.allPizzas).toEqual( [] ) |
 
 ---
 
@@ -67,7 +67,6 @@ _Pizza Place Order Page exists to take your order. Pizza order details can be se
 > `$ git clone https://github.com/sinkstyt/pizza-place.git`
 5. Press <kbd>ENTER</kbd>
 > Something like the following will appear in your terminal that indicates the download was successful:
-
 6. Change directory into the root folder just created
 > `$ cd pizza-place`
 7. Launch the your favorite text editor from within this directory to examine all the files
