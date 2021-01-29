@@ -24,3 +24,7 @@ function Order() {
 Order.prototype.addPizza = function(newPizza) {
   this.allPizzas.push(newPizza);
 }
+Order.prototype.calcTotal = function() {
+  let firstPizza = this.allPizzas[0];
+  return firstPizza.smallBasePrice;
+}
