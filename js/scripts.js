@@ -5,6 +5,6 @@ function Pizza() {
   this.largeBasePrice = 38;
   this.smallBasePrice = 26;
 }
-function Order() {
-  
+function Order(pizza) {
+  this.diablo = pizza;
 }
