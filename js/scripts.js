@@ -26,5 +26,7 @@ Order.prototype.addPizza = function(newPizza) {
 }
 Order.prototype.calcTotal = function() {
   let firstPizza = this.allPizzas[0];
-  return firstPizza.smallBasePrice;
+  let toppingsCost = firstPizza.smallTopEach * firstPizza.toppings.length;
+  let firstPizzaSubtotal = toppingsCost + firstPizza.smallBasePrice;
+  return firstPizzaSubtotal;
 }
