@@ -38,5 +38,6 @@ Order.prototype.calcTotal = function() {
     }
   }
   this.allPizzaSubtotal = grandTotal;
-  return grandTotal;
+  this.grandTotal = (Math.round(this.allPizzaSubtotal * this.salesTax * 100)) / 100;
+  return this.grandTotal;
 }
