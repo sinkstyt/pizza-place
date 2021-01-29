@@ -8,3 +8,6 @@ function Pizza() {
 function Order(pizza) {
   this.diablo = pizza;
 }
+Order.prototype.addPizza = function(pizzaInstance) {
+  this.pizza1 = pizzaInstance;
+}
