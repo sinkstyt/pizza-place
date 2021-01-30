@@ -41,3 +41,17 @@ Order.prototype.calcTotal = function() {
   this.grandTotal = (Math.round(this.allPizzaSubtotal * this.salesTax * 100)) / 100;
   return this.grandTotal;
 }
+
+// User Interface Logic ------>
+$("document").ready(function() {
+  let pizza1 = new Pizza();
+  let order1 = new Order();
+  $("form").submit(function(event) {
+    event.preventDefault();
+    const sizeSelected = $("input:radio[name=size-select]:checked");
+    if (sizeSelected !== "large") {
+      pizza1.size = "small";
+    }
+    
+  });
+});
