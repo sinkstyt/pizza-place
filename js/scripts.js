@@ -64,7 +64,10 @@ $("document").ready(function() {
     if (randoChecked === "on") {
       pizza1.assignName();
     }
-
+    order1.addPizza(pizza1);
+    $("ul.pizza-list").prepend(`<li class="entered-pizza">${order1.allPizzas[order1.allPizzas.length - 1]}</li>`);
+    let fullPrice = order1.calcTotal();
+    $("span#grand-total").text(`$ ${fullPrice}`);
     $("div.show-pizzas").slideUp();
 
   });
