@@ -9,7 +9,7 @@ function Pizza() {
   this.name = "orphan";
 }
 Pizza.prototype.assignName = function(name = "not specified") {
-  const defaultNames = ["plain", "baz", "bat", "bar", "diablo", "foo", "wasabi", "Georgian", "Jersey", "espresso", "caprice"];
+  const defaultNames = ["red herring", "baz", "bat", "bar", "diablo", "foo", "wasabi", "Georgian", "Jersey", "espresso", "caprice"];
   if (name === "not specified") {
     let randomNumInRange = Math.floor(Math.random() * 10) + 1;
     this.name = defaultNames[randomNumInRange];
@@ -48,10 +48,24 @@ $("document").ready(function() {
   let order1 = new Order();
   $("form").submit(function(event) {
     event.preventDefault();
-    const sizeSelected = $("input:radio[name=size-select]:checked");
+    const sizeSelected = $("input:radio[name=size-select]:checked").val();
     if (sizeSelected !== "large") {
       pizza1.size = "small";
     }
-    
+    $("input:checkbox[name=toppings]:checked").each(function() {
+      const topper = $(this).val();
+      pizza1.toppings.push(topper);
+    });
+    let typedInName = $("input#pizza-namer").val();
+    if (typedInName) {
+      pizza1.assignName(typedInName);
+    }
+    let randoChecked = $("input#random-name").val();
+    if (randoChecked === "on") {
+      pizza1.assignName();
+    }
+
+    $("div.show-pizzas").slideUp();
+
   });
 });
