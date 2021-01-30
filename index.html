@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Marko+One&display=swap" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -11,9 +13,9 @@
 <div class="container">
   <div class="jumbotron">
     <h1>We've Got Pizza Pies Here</h1>
-    <p>add one pizza at a time to your order</p>
     <ul>
-      <li>use the form below to select size, toppingsi>
+      <li>add one pizza at a time to your order</li>
+      <li>use the form below to select size, toppings</li>
       <li>click "View Total" once all pizzas have been entered</li>
     </ul>
   </div>
@@ -21,44 +23,68 @@
     <form class="form-check">
       <h2>Select Size</h2>
       <div class="size-select">
-        <label for="choose-large"></label>
         <input type="radio" name="size-select" id="large-radio" selected>
-        <label for="choose-small"></label>
+        <label for="choose-large">Large</label>
         <input type="radio" name="size-select" id="small-radio">
+        <label for="choose-small">Small</label>
       </div>
-      <div class="toppings form-check">
-        <label for="x-cheese"">extra mozzarella</label>
-        <input type="checkbox" name="toppings" id="x-cheese" value="x-cheese">
-        <label for="pepperoni">pepperoni <span class="translation">(salsiccia)</span></label>
-        <input type="checkbox" name="toppings" id="pepperoni" value="pepperoni">
-        <label for="mushroom">mushroom</label>
-        <input type="checkbox" name="toppings" id="mushroom" value="mushroom">
-        <label for="bacon">bacon</label>
-        <input type="checkbox" name="toppings" id="bacon" value="bacon">
-        <label for="ham">ham <span class="translation">(prosciutto)</span></label>
-        <input type="checkbox" name="toppings" id="ham" value="ham">
-        <label for="arugula">arugula <span class="translation">(the Brits call it "rocket")</span></label>
-        <input type="checkbox" name="toppings" id="arugula" value="arugula">
-        <label for="ricotta">ricotta</label>
-        <input type="checkbox" name="toppings" id="ricotta" value="ricotta">
-        <label for="gorgonzola">gorgonzola</label>
-        <input type="checkbox" name="toppings" id="gorgonzola" value="gorgonzola">
-        <label for="gruyere">gruy&egrave;re</label>
-        <input type="checkbox" name="toppings" id="gruyere" value="gruyere">
+      <h3>Select Toppings</h3>
+      <div class="card">
+        <div class="card-body">
+          <div class="toppings col-md-4">
+            <div class="form-group">
+              <input type="checkbox" name="toppings" id="x-cheese" value="x-cheese">
+              <label for="x-cheese"">extra mozzarella</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" name="toppings" id="pepperoni" value="pepperoni">
+              <label for="pepperoni">pepperoni <span class="translation">(salsiccia)</span></label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" name="toppings" id="mushroom" value="mushroom">
+              <label for="mushroom">mushroom</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" name="toppings" id="bacon" value="bacon">
+              <label for="bacon">bacon</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" name="toppings" id="ham" value="ham">
+              <label for="ham">ham <span class="translation">(prosciutto)</span></label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" name="toppings" id="arugula" value="arugula">
+              <label for="arugula">arugula <span class="translation">(the Brits call it "rocket")</span></label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" name="toppings" id="ricotta" value="ricotta">
+              <label for="ricotta">ricotta</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" name="toppings" id="gorgonzola" value="gorgonzola">
+              <label for="gorgonzola">gorgonzola</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" name="toppings" id="gruyere" value="gruyere">
+              <label for="gruyere">gruy&egrave;re</label>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="buttons">
         <button type="submit" class="btn btn-success" id="pizza-add">Add My Pizza</button>
-        <button type="button" class="btn btn-danger" id="finalizer">View Total</button> 
+        <button type="button" class="btn btn-danger" id="finalizer">View Total</button>
       </div>
-      <div class="form-check-inline">
+      <div class="form-check">
         <label for="pizza-namer">Give my pizza this name:</label>
         <input type="text" id="pizza-namer" placeholder="Rosetta's supreme">
         <small>optional</small>
       </div>
-      <div class="form-check-inline">
+      <div class="form-check pizza-namer">
         <label for="random-name">give this pizza a random name</label>
         <input type="checkbox" name="rando-calpizzaian" id="random-name">
         <small>optional</small>
+      </div>
     </form>
     <div class="show-pizzas">
       <h2>Cart View <span class="translation">(all pizzas in this order)</span></h2>
@@ -67,7 +93,7 @@
 
       </ul>
       <button type="button" class="btn btn-dark" id="order-change">Make Change</button>
-      <small>after clicking "Make Change" click pizza to remove from order</small>
+      <small class="translation">after clicking<span id="make-change"> "Make Change"</span> click pizza to remove from order</small>
     </div>
   </div>
 </div>

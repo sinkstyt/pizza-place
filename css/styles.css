@@ -1,0 +1,39 @@
+body {
+  font-family: 'Crimson Text', serif;
+  text-align: center;
+}
+h1, h2, h3 {
+  font-family: 'Marko One', serif;
+}
+.jumbotron ul {
+  list-style: none;
+}
+div.jumbotron {
+  border-radius: 40%;
+  margin-top: 1rem;
+  background-color: #28a745;
+}
+div.buttons {
+  margin: 10%;
+}
+.toppings input{
+  clear: right;
+}
+.card-body {
+  text-align: left;
+  margin-left: 10%;
+}
+.translation {
+  font-style: italic;
+  font-size-adjust: 0.6;
+}
+#make-change {
+  font-style: normal;
+  font-family: 'Marko One', serif;
+}
+.pizza-namer, .show-pizzas {
+  margin-bottom: 50%;
+}
+.show-pizzas {
+  display: none;
+}
