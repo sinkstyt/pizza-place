@@ -37,3 +37,11 @@ div.buttons {
 .show-pizzas {
   display: none;
 }
+.pizza-list {
+  list-style-type: none;
+}
+.consider-delete {
+  text-decoration: underline;
+  color: #3289C8;
+  cursor: pointer;
+}
