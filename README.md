@@ -72,12 +72,6 @@ _Pizza Place Order Page exists to take your order. Pizza order details can be se
 7. Launch the your favorite text editor from within this directory to examine all the files
 > `$ code .` _(If VS Code has its command prompt setup correctly)_
 
-## Explore the Live Page Installation
-* _to jump to a rendering of the page in your browser_
-* GitHub Pages graciously hosts at this URL: [Pizza Place Order Page - GO!](https://sinkstyt.github.io/pizza-place)
-* _Try the link or paste the URL into your browser's address bar_
-> https://sinkstyt.github.io/pizza-place/index.html
-
 ## Stretch Goals
 * a clean, stylized view of the complete order before calculating an order total (_a la_ cart view. Sorry for the pun.)
 * the ability for the user to remove a pizza from the current order/via the cart view
