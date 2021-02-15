@@ -29,9 +29,6 @@ Pizza.prototype.calcThisPiePrice = function() {
     this.piePrice += pizzaSubtotal;
   }
 }
-function showPizza(newPizza){
-  $("ul.pizza-list").prepend(`<li class="entered-pizza">Size: ${newPizza.size} | Toppings: ${newPizza.toppings} | Price: $ ${newPizza.piePrice}</li>`);
-}
 function Order() {
   this.allPizzas = [];
   this.salesTax = 1.08875;
@@ -52,13 +49,16 @@ Order.prototype.calcTotal = function() {
 // User Interface Logic ------>
 $("document").ready(function() {
   let order1 = new Order();
+  function showPizza(newPizza){
+    $("ul.pizza-list").prepend(`<li class="entered-pizza">Size: ${newPizza.size} | Toppings: ${newPizza.toppings} | Price: $ ${newPizza.piePrice}</li>`);
+  }
   $("form").submit(function(event) {
     event.preventDefault();
     const sizeSelected = $("input:radio[name=size-select]:checked").val();
     let toppingsArray = [];
     $("input:checkbox[name=toppings]:checked").each(function() {
       const topper = $(this).val();
-      toppingsArray.push(topper);
+      toppingsArray.push(" " + topper);
     });
     let pizza1 = new Pizza(sizeSelected, toppingsArray);
     let typedInName = $("input#pizza-namer").val();
@@ -69,13 +69,15 @@ $("document").ready(function() {
     if (randoChecked === "on") {
       pizza1.assignName();
     }
+    pizza1.calcThisPiePrice();
     order1.addPizza(pizza1);
     showPizza(pizza1);
-    let fullPrice = order1.calcTotal();
-    $("span#grand-total").html(`$ ${fullPrice}`);
     $("div.show-pizzas").removeClass("show-pizzas");
     $("div.show-pizzas").slideDown();
-    $(".pizza-namer").attr("margin-bottom", "0");
+    $(".pizza-namer").attr("margin-bottom", 0);
   });
-
+  $("#finalizer").click(function() {
+    let fullPrice = order1.calcTotal();
+    $("span#grand-total").html(`$ ${fullPrice}`);
+  })
 });
