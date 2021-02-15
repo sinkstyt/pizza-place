@@ -27,12 +27,8 @@ div.buttons {
   font-style: italic;
   font-size-adjust: 0.6;
 }
-#make-change {
-  font-style: normal;
-  font-family: 'Marko One', serif;
-}
 .pizza-namer, .show-pizzas {
-  margin-bottom: 50%;
+  margin-bottom: 20%;
 }
 .show-pizzas {
   display: none;
