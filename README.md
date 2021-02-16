@@ -20,9 +20,9 @@ _Pizza Place Order Page exists to take your order. Pizza order details can be se
 | Test | `Code` | Expect |
 | :------- | :------- | :------- |
 | It will create an instance of Pizza whose type is 'object'. | `const pizza1 = new Pizza();` | (typeof pizza1).toEqual('object') |
-| It will assign size "large" at a key "size" on instance of Pizza. | `pizza1.size = "large";` | (pizza1.size).toEqual("large") |
-| It will have an array keyed at "toppings" to store selected toppings. | `pizza1.toppings = ["topping", "topping", "topping"]` | (pizza1.toppings).toEqual(Array ["topping", "topping", "topping"] ) |
-| It will have a price value keyed according to size largeBasePrice. | `pizza1.largeBasePrice` // `38` | (pizza1.largeBasePrice).toEqual(38) |
+| It will take in a parameter upon instantiation that stores its size as a string (either "small" or "large") at a key called size. | `const pizza1 = new Pizza("large");` | (pizza1.size).toEqual("large") |
+| It will take in an array and key it to "toppings" upon instantiation. | `const pizza2 = new Pizza("small", ["topping", "topping", "topping"]` | (pizza2.toppings).toEqual(Array ["topping", "topping", "topping"] ) |
+| It will have prices numbers keyed at smallBasePrice and largeBasePrice regardless of indicated size upon instantiation. | `const pizza3 = new Pizza("large", ["topping"]);` | (pizza3.largeBasePrice).toEqual(38) |
 
 ---
 
@@ -37,7 +37,6 @@ _Pizza Place Order Page exists to take your order. Pizza order details can be se
 ### **Describe:** AssignName()
 | Test | `Code` | Expect |
 | :------- | :------- | :------- |
-| It will assign a new key on an instance of Pizza that holds a string (a name) as its value. | `const pizza1 = new Pizza(); pizza1.assignName();` | (pizza1.name).toEqual("baz") |
 | It will assign a new key "name" on an instance of Pizza when a name is supplied as parameter. | `const pizza2 = new Pizza(); pizza2.assignName("Charlie);` | (pizza2.name).toEqual("Charlie") |
 | It will assign a new key "name" on instance of Pizza chosen at random from an array of strings if a name is not passed in as parameter. | `const pizza3 = new Pizza(); pizza3.assignName();` | (pizza3.name).toEqual("caprice") |
 
@@ -50,13 +49,20 @@ _Pizza Place Order Page exists to take your order. Pizza order details can be se
 
 ---
 
+### **Describe:** CalcThisPiePrice()
+| Test | `Code` | Expect |
+| :------- | :------- | :------- |
+| It will store a number at pizzaInstance.piePrice that correctly multiplies the number of toppings by the price per topping by size and add this product to the appropriate size's base price. | `const pizzaInstance = new Pizza(); pizzaInstance.calcThisPiePrice();` | (this.piePrice).toEqual(32) |
+
+---
+
 ### **Describe:** CalculateTotal()
 | Test | `Code` | Expect |
 | :------- | :------- | :------- |
 | It will return a number | `const thisOrderPrice = CalculateTotal();` | (typeof thisOrderPrice).toEqual("number") |
-| It will return a subTotal price for one pizza by summing cost of all toppings and basePrice | `const subTotalOnePie = CalculateTotal();` | (subTotalOnePie).toEqual(42) |
 | It will return a subTotalForOrder by summing subTotal price of all pizzas | `const allPizzasPreTax = CalculateTotal();` | (allPizzasPreTax).toEqual(74) |
 | It will return a grand total from subTotalForOrder by adding sales tax. | `const grandTotal = CalculateTotal();` | (grandTotal).toEqual(82.78) |
+| It will rount gradTotal to the nearest hundredth if decimal places is greater than 2. | `const grandTotal = CalculateTotal();` | (grandTotal).toEqual(82.78) |
 
 ## Setup Instructions for Installing Locally (clone from GitHub)
 1. Copy this url to your clipboard: https://github.com/sinkstyt/pizza-place.git
