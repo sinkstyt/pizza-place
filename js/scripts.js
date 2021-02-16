@@ -52,7 +52,7 @@ $("document").ready(function() {
   function showPizza(newPizza){
     $("ul.pizza-list").prepend(`<li class="entered-pizza">Size: ${newPizza.size} | Toppings: ${newPizza.toppings} | Price: $ ${newPizza.piePrice}</li>`);
   }
-  $("form").submit(function(event) {
+  $("#pizza-add").on("click", function(event) {
     event.preventDefault();
     const sizeSelected = $("input:radio[name=size-select]:checked").val();
     let toppingsArray = [];
@@ -72,12 +72,13 @@ $("document").ready(function() {
     pizza1.calcThisPiePrice();
     order1.addPizza(pizza1);
     showPizza(pizza1);
-    $("div.show-pizzas").removeClass("show-pizzas");
     $("div.show-pizzas").slideDown();
-    $(".pizza-namer").attr("margin-bottom", 0);
+    $("div.show-pizzas").removeClass("show-pizzas");
+    // $(".pizza-namer").attr("margin-bottom", 0);
   });
-  $("#finalizer").click(function() {
+  $("#finalizer").on("click", function(event) {
+    event.preventDefault();
     let fullPrice = order1.calcTotal();
-    $("span#grand-total").html(`$ ${fullPrice}`);
-  })
+    $("#grand-total").html(`Current order total: $ ${fullPrice}`);
+  });
 });

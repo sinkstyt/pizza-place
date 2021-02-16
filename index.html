@@ -17,6 +17,8 @@
       <li>add one pizza at a time to your order</li>
       <li>use the form below to select size, toppings</li>
       <li>click "Add My Pizza" once each pizza has its details entered</li>
+      <li>click "Show My Total" once all pizzas have been entered</li>
+      <li>sales tax of 8.875% will be included in order total</li>
     </ul>
   </div>
   <div class="form-check">
@@ -73,6 +75,7 @@
       </div>
       <div class="buttons">
         <button type="submit" class="btn btn-success" id="pizza-add">Add My Pizza</button>
+        <button class="btn btn-danger" id="finalizer">Show My Total</button>
       </div>
       <div class="form-check">
         <label for="pizza-namer">Give my pizza this name:</label>
@@ -87,7 +90,7 @@
     </form>
     <div class="show-pizzas">
       <h2>Cart View <span class="translation">(all pizzas in this order)</span></h2>
-      <h3>Current order total:<span id="grand-total"></span></h3>
+      <h3 id="grand-total"></h3>
       <ul class="pizza-list">
 
       </ul>
